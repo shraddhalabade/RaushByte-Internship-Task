@@ -1,0 +1,601 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Shop fashion, accessories, footwear and lifestyle essentials at SLShop."
+    >
+
+    <title>Home | SLShop</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!--  NAVBAR  -->
+    <nav class="navbar navbar-expand-lg shop-navbar sticky-top">
+        <div class="container">
+
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-icon">
+                    <img src="logo.png" alt="SL" class="logo">
+                </span>
+                SLShop<span class="brand-dot">.</span>
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="nav-actions">
+
+                    <a
+                        href="shop.html"
+                        class="nav-icon"
+                        aria-label="Search"
+                    >
+                        <i class="bi bi-search"></i>
+                    </a>
+
+                    <a
+                        href="wishlist.html"
+                        class="nav-icon"
+                        aria-label="Wishlist"
+                    >
+                        <i class="bi bi-heart"></i>
+                        <span class="count-badge" id="wishlistCount">0</span>
+                    </a>
+
+                    <a
+                        href="cart.html"
+                        class="nav-icon"
+                        aria-label="Cart"
+                    >
+                        <i class="bi bi-bag"></i>
+                        <span class="count-badge" id="cartCount">0</span>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!--  HOME SECTION  -->
+    <header class="hero-section">
+        <div class="container">
+
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-6">
+
+                    <span class="eyebrow">
+                        <i class="bi bi-stars"></i>
+                        YOUR EVERYDAY STYLE DESTINATION
+                    </span>
+
+                    <h1>
+                        Find Your Style.<br>
+                        <span>Own Your Story.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Discover thoughtfully selected fashion, accessories,
+                        and everyday essentials that make every moment special.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="shop.html" class="btn btn-dark btn-lg">
+                            Shop Collection
+                            <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+
+                        <a href="about.html" class="btn btn-outline-dark btn-lg">
+                            Our Story
+                        </a>
+
+                    </div>
+
+                    <div class="hero-trust">
+
+                        <div class="trust-item">
+                            <i class="bi bi-truck"></i>
+                            Fast Delivery
+                        </div>
+
+                        <div class="trust-item">
+                            <i class="bi bi-shield-check"></i>
+                            Secure Shopping
+                        </div>
+
+                        <div class="trust-item">
+                            <i class="bi bi-arrow-repeat"></i>
+                            Easy Returns
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+
+                    <div class="hero-image-wrap">
+
+                        <img
+                            src="https://png.pngtree.com/png-clipart/20240907/original/pngtree-online-shopping-and-purchasing-png-image_15956827.png"
+                            alt="Modern clothing store"
+                            class="hero-image"
+                        >
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+    <!--  SHOP BY CATEGORY  -->
+    <section class="section-padding">
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-eyebrow">EXPLORE OUR STORE</span>
+                    <h2>Shop by Category</h2>
+                    <p>Find the right picks for your everyday life.</p>
+                </div>
+
+                <a href="shop.html" class="text-link">
+                    View All Categories
+                    <i class="bi bi-arrow-up-right"></i>
+                </a>
+
+            </div>
+
+            <!-- Category Cards -->
+            <div class="row g-4">
+
+                <!-- Fashion -->
+                <div class="col-6 col-lg-3">
+                    <a
+                        href="shop.html?category=fashion"
+                        class="category-card"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=600&q=80"
+                            alt="Fashion"
+                        >
+
+                        <div class="category-overlay">
+                            <span>01 / COLLECTION</span>
+                            <h3>Fashion</h3>
+                            <i class="bi bi-arrow-up-right"></i>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Accessories -->
+                <div class="col-6 col-lg-3">
+                    <a
+                        href="shop.html?category=accessories"
+                        class="category-card"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80"
+                            alt="Accessories"
+                        >
+
+                        <div class="category-overlay">
+                            <span>02 / COLLECTION</span>
+                            <h3>Accessories</h3>
+                            <i class="bi bi-arrow-up-right"></i>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Footwear -->
+                <div class="col-6 col-lg-3">
+                    <a
+                        href="shop.html?category=footwear"
+                        class="category-card"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80"
+                            alt="Footwear"
+                        >
+
+                        <div class="category-overlay">
+                            <span>03 / COLLECTION</span>
+                            <h3>Footwear</h3>
+                            <i class="bi bi-arrow-up-right"></i>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Lifestyle -->
+                <div class="col-6 col-lg-3">
+                    <a
+                        href="shop.html?category=lifestyle"
+                        class="category-card"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?auto=format&fit=crop&w=600&q=80"
+                            alt="Lifestyle"
+                        >
+
+                        <div class="category-overlay">
+                            <span>04 / COLLECTION</span>
+                            <h3>Lifestyle</h3>
+                            <i class="bi bi-arrow-up-right"></i>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!--  FEATURED PRODUCTS  -->
+    <section class="section-padding featured-section">
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-eyebrow">HANDPICKED FOR YOU</span>
+                    <h2>Featured Products</h2>
+                    <p>Our current favourites, selected with care.</p>
+                </div>
+
+                <a href="shop.html" class="text-link">
+                    Explore All
+                    <i class="bi bi-arrow-up-right"></i>
+                </a>
+
+            </div>
+
+            <div class="row g-4" id="featuredProducts">
+                <div class="col-12 text-center py-5">
+                    Loading products...
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!--  PROMOTIONAL SECTION  -->
+    <section class="promo-section">
+        <div class="container">
+
+            <div class="promo-content">
+
+                <span class="section-eyebrow">
+                    A LITTLE SOMETHING EXTRA
+                </span>
+
+                <h2>
+                    Good style.<br>
+                    Even better prices.
+                </h2>
+
+                <p>
+                    Discover your next favourite at a price you'll love.
+                </p>
+
+                <a href="shop.html" class="btn btn-light btn-lg">
+                    Explore the Collection
+                    <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+
+            </div>
+
+            <div class="promo-decoration">
+                <i class="bi bi-bag-heart"></i>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!--  SHOPPING BENEFITS  -->
+    <section class="section-padding benefits-section">
+        <div class="container">
+
+            <div class="section-title-center">
+
+                <span class="section-eyebrow">
+                    THE SLShop DIFFERENCE
+                </span>
+
+                <h2>Shopping made better</h2>
+
+                <p>
+                    A thoughtful experience from browsing to delivery.
+                </p>
+
+            </div>
+
+            <div class="row g-4 mt-3">
+
+                <div class="col-md-4">
+                    <div class="benefit-card">
+
+                        <div class="benefit-icon">
+                            <i class="bi bi-truck"></i>
+                        </div>
+
+                        <h4>Reliable Delivery</h4>
+
+                        <p>
+                            Convenient delivery options to get your
+                            favourites to your door.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="benefit-card">
+
+                        <div class="benefit-icon">
+                            <i class="bi bi-patch-check"></i>
+                        </div>
+
+                        <h4>Quality Picks</h4>
+
+                        <p>
+                            Thoughtfully selected products for
+                            everyday living.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="benefit-card">
+
+                        <div class="benefit-icon">
+                            <i class="bi bi-headset"></i>
+                        </div>
+
+                        <h4>Here to Help</h4>
+
+                        <p>
+                            Reach out with questions about your
+                            shopping experience.
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!--  NEWSLETTER SECTION  -->
+    <section class="newsletter-section">
+        <div class="container">
+
+            <div class="newsletter-content">
+
+                <span class="section-eyebrow">
+                    THE SLShop EDIT
+                </span>
+
+                <h2>A little inspiration in your inbox.</h2>
+
+                <p>
+                    Get updates about new arrivals, fresh finds,
+                    and special offers.
+                </p>
+
+                <form id="newsletterForm" class="newsletter-form">
+
+                    <label
+                        class="visually-hidden"
+                        for="newsletterEmail"
+                    >
+                        Email address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="newsletterEmail"
+                        placeholder="Enter your email address"
+                        required
+                    >
+
+                    <button type="submit" class="btn btn-dark">
+                        Subscribe
+                    </button>
+
+                </form>
+
+                <p
+                    id="newsletterMessage"
+                    class="newsletter-message"
+                    aria-live="polite"
+                ></p>
+
+                <small>
+                    Demo form: email addresses are not saved or sent.
+                </small>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!--  FOOTER  -->
+    <footer class="site-footer">
+        <div class="container">
+
+            <div class="row g-5">
+
+                <div class="col-lg-4">
+
+                    <a class="navbar-brand footer-brand" href="index.html">
+
+                        <span class="brand-icon">
+                            <i class="bi bi-bag-heart-fill"></i>
+                        </span>
+
+                        SLShop<span class="brand-dot">.</span>
+
+                    </a>
+
+                    <p class="footer-description">
+                        Thoughtfully selected finds for your style,
+                        your space, and your everyday life.
+                    </p>
+
+                    <div class="social-links">
+
+                        <a href="#" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+
+                        <a href="#" aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+
+                        <a href="#" aria-label="Pinterest">
+                            <i class="bi bi-pinterest"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-2">
+
+                    <h5>Explore</h5>
+
+                    <ul class="footer-links">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+
+                        <li>
+                            <a href="shop.html">Shop All</a>
+                        </li>
+
+                        <li>
+                            <a href="wishlist.html">Wishlist</a>
+                        </li>
+
+                        <li>
+                            <a href="cart.html">Cart</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="col-6 col-lg-2">
+
+                    <h5>About</h5>
+
+                    <ul class="footer-links">
+                        <li>
+                            <a href="about.html">Our Story</a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html">Contact</a>
+                        </li>
+
+                        <li>
+                            <a href="checkout.html">Checkout</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <h5>Need help?</h5>
+
+                    <p class="footer-description">
+                        Have a question about your shopping experience?
+                    </p>
+
+                    <a
+                        href="contact.html"
+                        class="footer-contact-link"
+                    >
+                        Get in touch
+                        <i class="bi bi-arrow-up-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <p>
+                    © <span id="currentYear"></span>
+                    SLShop. e-commerce project.
+                </p>
+
+                <p>
+                    Designed with care
+                    <i class="bi bi-heart-fill"></i>
+                </p>
+
+            </div>
+
+        </div>
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/products.js"></script>
+
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLBlog | Read. Learn. Grow.</title>
+    <meta name="description"content="Discover insightful articles on technology, travel, lifestyle, business and more with SLBlog.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo" id="homeLogo">
+                <span class="logo-icon"><img src="logo.png" alt="SL" class="sllogo"></span>
+                <span>SLBlog<span class="logo-dot">.</span></span>
+            </a>
+            <button class="menu-toggle" id="menuToggle"
+                aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#" class="nav-link active" id="homeLink">Home</a>
+
+                <a href="#categories" class="nav-link"
+                    id="categoriesLink">Categories</a>
+                <a href="#about" class="nav-link">About</a>
+
+<a href="#contact" class="nav-link"
+   onclick="event.preventDefault(); event.stopImmediatePropagation(); document.getElementById('contact').scrollIntoView({behavior:'smooth', block:'start'});">
+    Contact </a>
+            </nav>
+            <div class="nav-actions">
+                <form class="search-box" id="searchForm">
+                    <span class="search-icon">⌕</span>
+                    <input type="search" id="searchInput"
+                        placeholder="Search blogs..."
+                        aria-label="Search blog articles">
+                </form>
+
+                <a href="#newsletter" class="btn btn-primary nav-subscribe">
+                    Subscribe </a>
+            </div></div></header>
+
+    <!-- HOMEPAGE  -->
+    <main id="homePage">
+        <section class="hero container">
+            <div class="hero-content">
+                <span class="eyebrow">Welcome to SLBlog</span>
+                <h1>Read. Learn.
+                    <span class="gradient-text">Grow.</span>
+                </h1>
+                <p>
+                    Discover amazing articles, practical tips, and fresh
+                    perspectives on technology, lifestyle, and more.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#blogs" class="btn btn-primary">
+                        Explore Blogs <span>→</span>
+                    </a>
+                    <a href="#categories" class="btn btn-secondary">
+                        Explore Categories
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <strong>50+</strong>
+                        <span>Articles</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <strong>8</strong>
+                        <span>Categories</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <strong>100%</strong>
+                        <span>Curiosity</span>
+                    </div></div></div>
+
+            <div class="hero-image">
+                <img
+                    src="https://behuman.ly/wp-content/uploads/2025/06/image_79f4836b8fe86e0c4e03aabb969c3a6e.jpeg"
+                    alt="Laptop, notebook and coffee on a creative workspace">
+            </div></section>
+
+        <!--  CATEGORIES  -->
+
+        <section class="categories-section section-padding" id="categories">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-label">EXPLORE TOPICS</span>
+                        <h2>Browse by <span>Categories</span></h2>
+                        <p>Find something interesting to read today.</p>
+                    </div>
+                    <a href="#blogs" class="text-link">
+                        View all articles →
+                    </a>
+                </div>
+                <div class="category-list" id="categoryList">
+                    <button class="category-card active"
+                        data-category="All">
+                        <span class="category-icon">✦</span>
+                        <span class="category-name">All Topics</span>
+                    </button>
+
+                    <button class="category-card"
+                        data-category="Technology">
+                        <span class="category-icon">⌘</span>
+                        <span class="category-name">Technology</span>
+                    </button>
+
+                    <button class="category-card"
+                        data-category="Travel">
+                        <span class="category-icon">✈</span>
+                        <span class="category-name">Travel</span>
+                    </button>
+
+                    <button class="category-card"
+                        data-category="Lifestyle">
+                        <span class="category-icon">♡</span>
+                        <span class="category-name">Lifestyle</span>
+                    </button>
+
+                    <button class="category-card"
+                        data-category="Business">
+                        <span class="category-icon">↗</span>
+                        <span class="category-name">Business</span>
+                    </button>
+
+                    <button class="category-card"
+                        data-category="Education">
+                        <span class="category-icon">▤</span>
+                        <span class="category-name">Education</span>
+                    </button>
+
+                    <button class="category-card"
+                        data-category="Health">
+                        <span class="category-icon">＋</span>
+                        <span class="category-name">Health</span>
+                    </button>
+
+                    <button class="category-card"
+                        data-category="Food">
+                        <span class="category-icon">♨</span>
+                        <span class="category-name">Food</span>
+                    </button></div></div></section>
+
+        <!--  FEATURED BLOG  -->
+
+        <section class="featured-section section-padding"
+            id="featuredSection">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-label">EDITOR'S PICK</span>
+                        <h2>Featured <span>Story</span></h2>
+                    </div>
+                </div>
+                <article class="featured-card">
+                    <div class="featured-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1100&q=85"
+                            alt="Modern technology and robotics">
+                        <span class="image-badge">Featured Article</span>
+                    </div>
+                    <div class="featured-content">
+                        <span class="tag">Technology</span>
+                        <h3>
+                            <a href="#article" class="article-link"
+                                data-article="ai-future">
+                                The Future of Artificial Intelligence
+                            </a>
+                        </h3>
+                        <p>
+                            Explore how artificial intelligence is changing
+                            the way we work, learn, communicate, and solve
+                            real-world problems.
+                        </p>
+
+                        <div class="article-meta">
+                            <span>By SLBlog Editorial</span>
+                            <span>Nov 5, 2026</span>
+                            <span>6 min read</span>
+                        </div>
+
+                        <a href="#article" class="btn btn-primary article-link"
+                            data-article="ai-future">
+                            Read Full Article →
+                        </a></div></article></div> </section>
+
+        <!--  LATEST BLOGS  -->
+
+        <section class="blogs-section section-padding" id="blogs">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-label">FRESH FROM THE BLOG</span>
+                        <h2>Latest <span>Articles</span></h2>
+                        <p>Fresh ideas, useful knowledge, and stories worth sharing.</p>
+                    </div>
+
+                    <div class="blog-count">
+                        <span id="blogCount">8</span> articles
+                    </div>
+<button type="button" class="btn btn-primary" id="addBlogBtn">
+    + Add New Blog
+</button></div>
+                <div class="blog-grid" id="blogGrid">
+                    <!-- BLOG 1 -->
+                    <article class="blog-card"
+                        data-category="Technology"
+                        data-title="top vscode extensions every developer should know">
+
+                        <a href="#article" class="blog-image article-link"
+                            data-article="vscode">
+                            <img
+                                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=700&q=80"
+                                alt="Laptop displaying code on a desk"
+                                loading="lazy">
+                            <span class="tag image-tag">Technology</span>
+                        </a>
+
+                        <div class="blog-content">
+
+                            <div class="article-meta">
+                                <span>Nov 5, 2026</span>
+                                <span>5 min read</span>
+                            </div>
+
+                            <h3>
+                                <a href="#article" class="article-link"
+                                    data-article="vscode">
+                                    Top 10 VS Code Extensions Every Developer
+                                    Should Know
+                                </a>
+                            </h3>
+
+                            <p>
+                                Discover useful extensions that can improve
+                                your coding workflow and productivity.
+                            </p>
+
+                            <a href="#article" class="read-more article-link"
+                                data-article="vscode">
+                                Read Article <span>→</span>
+                            </a>
+
+                        </div>
+                    </article>
+                    <!-- BLOG 2 -->
+                    <article class="blog-card"
+                        data-category="Travel"
+                        data-title="best travel destinations for nature lovers">
+                        <a href="#article" class="blog-image article-link"
+                            data-article="travel">
+                            <img
+                                src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=700&q=80"
+                                alt="Beautiful mountain landscape"
+                                loading="lazy">
+                            <span class="tag image-tag">Travel</span>
+                        </a>
+
+                        <div class="blog-content">
+                            <div class="article-meta">
+                                <span>Nov 4, 2026</span>
+                                <span>6 min read</span>
+                            </div>
+                            <h3>
+                                <a href="#article" class="article-link"
+                                    data-article="travel">
+                                    Best Travel Destinations for Nature Lovers
+                                </a>
+                            </h3>
+                            <p>
+                                Find beautiful destinations for your next
+                                relaxing and memorable adventure.
+                            </p>
+                            <a href="#article" class="read-more article-link"
+                                data-article="travel">
+                                Read Article <span>→</span>
+                            </a>
+
+                        </div>
+                    </article>
+                    <!-- BLOG 3 -->
+
+                    <article class="blog-card"
+                        data-category="Lifestyle"
+                        data-title="simple daily habits for a productive life">
+
+                        <a href="#article" class="blog-image article-link"
+                            data-article="habits">
+                            <img
+                                src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=700&q=80"
+                                alt="Bright and organized workspace"
+                                loading="lazy">
+                            <span class="tag image-tag">Lifestyle</span>
+                        </a>
+                        <div class="blog-content">
+                            <div class="article-meta">
+                                <span>Nov 3, 2026</span>
+                                <span>4 min read</span>
+                            </div>
+
+                            <h3>
+                                <a href="#article" class="article-link"
+                                    data-article="habits">
+                                    Simple Daily Habits for a Productive Life
+                                </a>
+                            </h3>
+
+                            <p>
+                                Build better routines, manage your time, and
+                                make room for meaningful progress.
+                            </p>
+
+                            <a href="#article" class="read-more article-link"
+                                data-article="habits">
+                                Read Article <span>→</span>
+                            </a>
+                        </div>
+                    </article>
+                    <!-- BLOG 4 -->
+                    <article class="blog-card"
+                        data-category="Technology"
+                        data-title="how generative ai is changing the world">
+
+                        <a href="#article" class="blog-image article-link"
+                            data-article="generative-ai">
+                            <img
+                                src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=700&q=80"
+                                alt="Artificial intelligence digital concept"
+                                loading="lazy">
+                            <span class="tag image-tag">Technology</span>
+                        </a>
+
+                        <div class="blog-content">
+
+                            <div class="article-meta">
+                                <span>Nov 2, 2026</span>
+                                <span>7 min read</span>
+                            </div>
+
+                            <h3>
+                                <a href="#article" class="article-link"
+                                    data-article="generative-ai">
+                                    How Generative AI Is Changing the World
+                                </a>
+                            </h3>
+
+                            <p>
+                                Understand generative AI and how it is
+                                creating new possibilities across industries.
+                            </p>
+
+                            <a href="#article" class="read-more article-link"
+                                data-article="generative-ai">
+                                Read Article <span>→</span>
+                            </a>
+
+                        </div>
+                    </article>
+                    <!-- BLOG 5 -->
+
+                    <article class="blog-card"
+                        data-category="Business"
+                        data-title="smart business strategies for beginners">
+
+                        <a href="#article" class="blog-image article-link"
+                            data-article="business">
+                            <img
+                                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80"
+                                alt="Business analytics and charts"
+                                loading="lazy">
+                            <span class="tag image-tag">Business</span>
+                        </a>
+
+                        <div class="blog-content">
+
+                            <div class="article-meta">
+                                <span>Nov 1, 2026</span>
+                                <span>5 min read</span>
+                            </div>
+
+                            <h3>
+                                <a href="#article" class="article-link"
+                                    data-article="business">
+                                    Smart Business Strategies for Beginners
+                                </a>
+                            </h3>
+
+                            <p>
+                                Learn practical ways to plan, understand
+                                customers, and grow a new business.
+                            </p>
+
+                            <a href="#article" class="read-more article-link"
+                                data-article="business">
+                                Read Article <span>→</span>
+                            </a>
+
+                        </div>
+                    </article>
+                    <!-- BLOG 6 -->
+
+                    <article class="blog-card"
+                        data-category="Education"
+                        data-title="how to learn programming effectively">
+
+                        <a href="#article" class="blog-image article-link"
+                            data-article="programming">
+                            <img
+                                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80"
+                                alt="Laptop and notebook for learning"
+                                loading="lazy">
+                            <span class="tag image-tag">Education</span>
+                        </a>
+
+                        <div class="blog-content">
+
+                            <div class="article-meta">
+                                <span>Oct 30, 2026</span>
+                                <span>5 min read</span>
+                            </div>
+
+                            <h3>
+                                <a href="#article" class="article-link"
+                                    data-article="programming">
+                                    How to Learn Programming Effectively
+                                </a>
+                            </h3>
+
+                            <p>
+                                Discover practical learning techniques,
+                                coding exercises, and project-based practice.
+                            </p>
+
+                            <a href="#article" class="read-more article-link"
+                                data-article="programming">
+                                Read Article <span>→</span>
+                            </a>
+
+                        </div>
+                    </article>
+                    <!-- BLOG 7 -->
+
+                    <article class="blog-card"
+                        data-category="Health"
+                        data-title="healthy eating habits for busy people">
+
+                        <a href="#article" class="blog-image article-link"
+                            data-article="healthy-food">
+                            <img
+                                src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=700&q=80"
+                                alt="Healthy meal with fresh vegetables"
+                                loading="lazy">
+                            <span class="tag image-tag">Health</span>
+                        </a>
+
+                        <div class="blog-content">
+
+                            <div class="article-meta">
+                                <span>Oct 28, 2026</span>
+                                <span>4 min read</span>
+                            </div>
+
+                            <h3>
+                                <a href="#article" class="article-link"
+                                    data-article="healthy-food">
+                                    Healthy Eating Habits for Busy People
+                                </a>
+                            </h3>
+
+                            <p>
+                                Explore simple meal-planning ideas and
+                                balanced food choices for everyday life.
+                            </p>
+
+                            <a href="#article" class="read-more article-link"
+                                data-article="healthy-food">
+                                Read Article <span>→</span>
+                            </a></div></article>
+                    <!-- BLOG 8 -->
+                    <article class="blog-card"
+                        data-category="Lifestyle"
+                        data-title="how to build a better morning routine">
+
+                        <a href="#article" class="blog-image article-link"
+                            data-article="morning">
+                            <img
+                                src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=80"
+                                alt="Coffee prepared for a peaceful morning"
+                                loading="lazy">
+                            <span class="tag image-tag">Lifestyle</span>
+                        </a>
+
+                        <div class="blog-content">
+
+                            <div class="article-meta">
+                                <span>Oct 26, 2026</span>
+                                <span>4 min read</span>
+                            </div>
+
+                            <h3>
+                                <a href="#article" class="article-link"
+                                    data-article="morning">
+                                    How to Build a Better Morning Routine
+                                </a>
+                            </h3>
+
+                            <p>
+                                Start your day with simple habits that
+                                support focus, energy, and consistency.
+                            </p>
+
+                            <a href="#article" class="read-more article-link"
+                                data-article="morning">
+                                Read Article <span>→</span>
+                            </a></div></article> </div>
+
+                <!-- EMPTY SEARCH RESULT -->
+
+                <div class="empty-state" id="emptyState" hidden>
+                    <span>⌕</span>
+                    <h3>No articles found</h3>
+                    <p>Try another keyword or choose a different category.</p>
+                    <button class="btn btn-primary" id="resetFilters">
+                        View All Articles
+                    </button>
+                </div>
+                <div class="load-more-wrapper">
+                    <button class="btn btn-secondary" id="loadMoreBtn">
+                        Explore More Articles →
+                    </button>
+                </div></div></section>
+        <!--  ABOUT  -->
+
+        <section class="about-section section-padding" id="about">
+            <div class="container about-container">
+                <div class="about-decoration">B.</div>
+                <div class="about-content">
+                    <span class="section-label">A LITTLE ABOUT US</span>
+                    <h2>
+                        Stories that inspire.
+                        <span>Ideas that stay.</span>
+                    </h2>
+                    <p>
+                        SLBlog is a space for curious minds. We share
+                        practical knowledge, fresh perspectives, and
+                        inspiring stories to help you learn something
+                        new every day.
+                    </p>
+                    <a href="#about-details" class="btn btn-primary" id="discoverStoriesBtn">Discover Our Stories →</a>
+                </div></div></section>
+
+<!-- DETAILED ABOUT SLBlog -->
+<section class="about-details section-padding" id="about-details">
+    <div class="container">
+        <div class="section-heading">
+            <div>
+                <span class="section-label">GET TO KNOW US</span>
+                <h2>More than just <span>a blog.</span></h2>
+                <p>
+                    A place where curiosity meets creativity
+                    and every story has something to offer.
+                </p></div> </div>
+        <div class="about-details-content">
+            <div class="about-details-card">
+                <span class="about-details-icon">✦</span>
+                <h3>Our Purpose</h3>
+                <p>
+                    SLBlog brings useful knowledge, fresh perspectives,
+                    and inspiring ideas together in one place. We want
+                    to make learning enjoyable and help readers discover
+                    something valuable with every visit.
+                </p>
+            </div>
+            <div class="about-details-card">
+                <span class="about-details-icon">♡</span>
+                <h3>What We Believe</h3>
+                <p>
+                    Great stories can spark new ideas, encourage
+                    creativity, and help us see the world differently.
+                    We believe useful content should be engaging,
+                    accessible, and meaningful.
+                </p>
+            </div>
+
+            <div class="about-details-card">
+                <span class="about-details-icon">✧</span>
+                <h3>What You'll Discover</h3>
+                <p>
+                    Explore technology, travel, lifestyle, education,
+                    business, health, and more. From practical guides
+                    to fresh inspiration, there is always something
+                    new to explore on SLBlog.
+                </p></div></div>
+
+        <div class="about-details-footer">
+            <h3>Every story starts with curiosity.</h3>
+            <p>
+                Find your next idea, learn something new, and make
+                every visit to SLBlog worthwhile.
+            </p>
+            <a href="#blogs" class="btn btn-primary">
+                Explore Latest Articles →
+            </a>
+        </div></div></section>
+        <!--  NEWSLETTER  -->
+        <section class="newsletter-section section-padding"
+            id="newsletter">
+            <div class="container">
+                <div class="newsletter-card">
+                    <div class="newsletter-content">
+                        <span class="section-label">THE SLBlog NEWSLETTER</span>
+                        <h2>Good reads. <span>Delivered.</span></h2>
+                        <p>
+                            Get fresh ideas, helpful articles, and
+                            inspiration delivered straight to your inbox.
+                        </p>
+                    </div>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <label for="newsletterEmail">
+                            Your email address
+                        </label>
+                        <div class="newsletter-input-group">
+                            <input
+                                type="email"
+                                id="newsletterEmail"
+                                placeholder="you@example.com"
+                                required>
+                            <button type="submit" class="btn btn-primary">
+                                Subscribe →
+                            </button>
+                        </div>
+                        <p class="form-message" id="newsletterMessage"
+                            aria-live="polite"></p>
+                        <small> No spam. Just meaningful reads. </small>
+                    </form></div></div></section> </main>
+
+    <!--  ARTICLE PAGE  -->
+    <main id="articlePage" hidden>
+        <section class="article-page-section section-padding">
+            <div class="container">
+                <a href="#" class="back-link" id="backToBlogs">
+                    ← Back to all articles
+                </a>
+                <div class="article-layout">
+                    <article class="article-main">
+                        <div class="article-header">
+                            <span class="tag" id="articleCategory">
+                                Technology
+                            </span>
+                            <h1 id="articleTitle">
+                                The Future of Artificial Intelligence
+                            </h1>
+                            <p class="article-subtitle" id="articleSubtitle">
+                                Explore the ideas, innovations, and technologies
+                                shaping our future.
+                            </p>
+                            <div class="article-author">
+                                <div class="author-avatar">B</div>
+                                <div class="author-details">
+                                    <strong>SLBlog Editorial</strong>
+                                    <span id="articleMeta">
+                                        Nov 5, 2026 · 6 min read
+                                    </span> </div></div> </div>
+                        <img
+                            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=85"alt="Article cover image"class="article-cover"id="articleCover">
+                        <div class="article-body" id="articleBody">
+                            <p>
+                                Technology continues to transform the way
+                                we live, learn, work, and communicate.
+                                Understanding these changes helps us make
+                                better decisions and discover new opportunities.
+                            </p>
+                            <h2>Why this topic matters</h2>
+                            <p>
+                                New ideas become useful when we understand
+                                how they work and where they can be applied.
+                                Learning the fundamentals helps us evaluate
+                                opportunities and challenges with confidence.
+                            </p>
+                            <h2>What you should know</h2>
+                            <p>
+                                Start with the basics, explore practical
+                                examples, and keep experimenting. Consistent
+                                learning can turn complex ideas into skills
+                                that you can use in real projects.
+                            </p>
+                            <blockquote>
+                                Great ideas become powerful when we put
+                                knowledge into practice.
+                            </blockquote>
+                            <h2>Final thoughts</h2>
+                            <p>
+                                Stay curious, ask questions, and continue
+                                exploring. Every useful discovery begins
+                                with a willingness to learn something new.
+                            </p>
+                        </div>
+                        <div class="article-footer">
+                            <div class="article-tags">
+                                <span>Topics:</span>
+                                <span class="tag" id="articleFooterTag">
+                                    Technology
+                                </span>
+                            </div>
+                            <button class="btn btn-secondary" id="shareArticle"> ↗ Share Article</button>
+                        </div>
+                        <p class="form-message" id="shareMessage"
+                            aria-live="polite"></p>
+                        <!-- RELATED ARTICLES -->
+                        <section class="related-section">
+                            <div class="section-heading">
+                                <div>
+                                    <span class="section-label">KEEP READING</span>
+                                    <h2>Related <span>Articles</span></h2>
+                                </div>
+                            </div>
+                            <div class="related-grid" id="relatedGrid">
+                            </div></section></article>
+                    <!-- ARTICLE SIDEBAR -->
+                    <aside class="article-sidebar">
+                        <div class="sidebar-card author-card">
+                            <div class="author-avatar large">B</div>
+                            <h3>SLBlog Editorial</h3>
+                            <p>
+                                Sharing knowledge, practical ideas, and
+                                stories for curious minds.
+                            </p>
+                            <a href="#about" id="aboutAuthor"
+                                class="text-link">
+                                About SLBlog →
+                            </a>
+                        </div>
+                        <div class="sidebar-newsletter">
+                            <span class="newsletter-icon">✉</span>
+                            <h3>Enjoying the read?</h3>
+                            <p> Subscribe to discover more stories like this.</p>
+                            <a href="#newsletter" id="sidebarSubscribe"
+                                class="btn btn-primary">
+                                Join the Newsletter →
+                            </a></div></aside></div> </div></section></main>
+
+<!-- ADD EDIT BLOG FORM -->
+<section id="blogEditorSection" class="section-padding" hidden>
+    <div class="container">
+        <div class="section-heading">
+            <div>
+                <span class="section-label">BLOG MANAGEMENT</span>
+                <h2 id="blogEditorTitle">Add New Blog</h2>
+                <p>Create or update an article on your website.</p>
+            </div>
+        </div>
+        <form id="blogEditorForm">
+            <input type="hidden" id="editBlogId">
+
+            <label for="blogTitleInput">Blog Title</label>
+            <input
+                type="text"
+                id="blogTitleInput"
+                placeholder="Enter blog title"
+                required>
+
+            <label for="blogCategoryInput">Category</label>
+            <select id="blogCategoryInput" required>
+                <option value="">Select category</option>
+                <option value="Technology">Technology</option>
+                <option value="Travel">Travel</option>
+                <option value="Lifestyle">Lifestyle</option>
+                <option value="Business">Business</option>
+                <option value="Education">Education</option>
+                <option value="Health">Health</option>
+                <option value="Food">Food</option>
+            </select>
+            <label for="blogImageInput">Image URL</label>
+            <input
+                type="url"
+                id="blogImageInput"
+                placeholder="https://example.com/image.jpg"
+                required>
+
+            <label for="blogSubtitleInput">Short Description</label>
+            <textarea id="blogSubtitleInput"placeholder="Write a short description"rows="3"required></textarea>
+            <label for="blogBodyInput">Full Article</label>
+            <textarea id="blogBodyInput" placeholder="Write your article here" rows="8" required></textarea>
+
+            <div class="hero-buttons">
+                <button type="submit" class="btn btn-primary" id="saveBlogBtn">Save Blog </button>
+
+                <button type="button" class="btn btn-secondary" id="cancelBlogBtn"> Cancel</button>
+            </div></form></div></section>
+
+<!--  CONTACT SECTION  -->
+<section class="contact-section section-padding" id="contact-section">
+    <div class="container">
+
+        <div class="section-heading">
+            <div>
+                <span class="section-label">GET IN TOUCH</span>
+                <h2>Contact <span>Us</span></h2>
+                <p>Have a question or suggestion? We'd love to hear from you.</p>
+            </div></div>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">✉</div>
+                <h3>Email Address</h3>
+                <a id="contactEmail" href="mailto:your-email@example.com">
+                   shraddha@gmail.com
+                </a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">☎</div>
+                <h3>Phone Number</h3>
+                <a id="contactPhone" href="tel:">1234567890 </a>
+            </div></div></div></div></section>
+
+    <!--  FOOTER  -->
+
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <a href="#" class="logo footer-logo" id="footerLogo">
+                        <span class="logo-icon">✦</span>
+                        <span>SLBlog<span class="logo-dot">.</span></span>
+                    </a>
+                    <p>
+                        A little inspiration, a lot of knowledge.
+                        Read something meaningful every day.
+                    </p>
+                </div>
+                <div class="footer-column">
+                    <h3>Explore</h3>
+                    <a href="#homeLogo">Home</a>
+                    <a href="#categories">Categories</a>
+                    <a href="#blogs">Latest Articles</a>
+                    <a href="#about">About Us</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Popular Topics</h3>
+                    <a href="#blogs" data-footer-category="Technology">Technology</a>
+                    <a href="#blogs" data-footer-category="Travel">Travel</a>
+                    <a href="#blogs" data-footer-category="Lifestyle">Lifestyle</a>
+                    <a href="#blogs" data-footer-category="Business">Business</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Stay Connected</h3>
+                    <p>Never miss a story worth reading.</p>
+                    <a href="#newsletter" class="footer-subscribe">
+                        Subscribe to SLBlog →
+                    </a></div></div>
+            <div class="footer-bottom">
+                <p>
+                    © <span id="currentYear">2026</span> SLBlog.
+                    All rights reserved.
+                </p>
+                <p>Made with care for curious minds. ♡</p>
+            </div></div></footer>
+    <!--  JAVASCRIPT  -->
+    <script src="script.js"></script>
+</body>
+</html>

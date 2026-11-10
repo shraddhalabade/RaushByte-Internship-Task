@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+<form id="signupForm">
+      <h1>Create Account</h1>
+
+        <label>Username : </label>
+        <input type="text" id="username" placeholder="Enter Username" required>
+
+        <label>Email : </label>
+        <input type="email" id="email" placeholder="Enter Email" required>
+
+        <label>Password : </label>
+        <input type="password" id="password" placeholder="Enter Password" required>
+
+<button type="button" id="sendOtpBtn" class="send-otp-btn">
+    Send OTP
+</button>
+<p id="timer" style="color: blue; font-size: 14px;"></p>
+
+        <input type="text" id="otp" placeholder="Enter OTP">
+
+        <button type="submit">Sign Up</button>
+<p>
+        Already have an account?
+        <a href="login.html">Login</a>
+    </p>
+    </form>
+
+
+<script src="signup.js"></script>
+</body>
+</html>

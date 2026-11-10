@@ -1,0 +1,528 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f7f7fc">
+    <title>SLBlog | Admin Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar">
+        <a href="#" class="brand" data-page="overview">
+            <span class="brand-icon"><img src="logo.png" alt="SL" class="slogo"></span>
+            <span>SLBlog</span>
+        </a>
+
+
+        <div class="workspace">
+            <div class="workspace-icon">B</div>
+            <div>
+                <strong>SLBlog Studio</strong>
+                <small>Admin workspace</small>
+            </div>
+            <i class="fa-solid fa-chevron-down workspace-arrow"></i>
+        </div>
+
+        <p class="nav-label">WORKSPACE</p>
+
+        <nav class="navigation">
+            <button class="nav-item active" data-page="overview">
+                <i class="fa-solid fa-border-all"></i>
+                <span>Overview</span>
+            </button>
+
+            <button class="nav-item" data-page="posts">
+                <i class="fa-regular fa-file-lines"></i>
+                <span>All Posts</span>
+                <span class="nav-count" id="navPostCount">0</span>
+            </button>
+
+            <button class="nav-item" data-page="analytics">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Analytics</span>
+            </button>
+
+            <button class="nav-item" data-page="categories">
+                <i class="fa-solid fa-folder-open"></i>
+                <span>Categories</span>
+            </button>
+
+            <button class="nav-item" data-page="comments">
+                <i class="fa-regular fa-comments"></i>
+                <span>Comments</span>
+                <span class="nav-count" id="navCommentCount">0</span>
+            </button>
+        </nav>
+
+        <p class="nav-label second-label">PREFERENCES</p>
+
+        <nav class="navigation">
+            <button class="nav-item" data-page="settings">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="help-card">
+                <div class="help-icon"><i class="fa-regular fa-circle-question"></i></div>
+                <strong>Need some help?</strong>
+                <p>Manage your blog like a pro.</p>
+                <button id="helpBtn">Explore dashboard <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <div class="profile">
+                <div class="avatar">AD</div>
+                <div class="profile-info">
+                    <strong id="profileName">Admin User</strong>
+                    <small>Administrator</small>
+                </div>
+                <button class="icon-button profile-menu" id="profileMenu" aria-label="Profile menu">
+                    <i class="fa-solid fa-ellipsis"></i>
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="icon-button menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="breadcrumbs">
+                    <span>Workspace</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <strong id="breadcrumbTitle">Overview</strong>
+                </div>
+            </div>
+
+            <div class="topbar-right">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" id="globalSearch" placeholder="Search anything...">
+                </div>
+
+                <button class="icon-button notification-button" id="notificationBtn" aria-label="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="topbar-divider"></div>
+
+                <button class="topbar-profile" id="topProfile">
+                    <div class="avatar">AD</div>
+                    <span id="topProfileName">Admin User</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="page-container">
+
+            <section class="page-section active" id="page-overview">
+                <div class="welcome-row">
+                    <div>
+                        <div class="eyebrow"><span class="status-dot"></span> YOUR CONTENT AT A GLANCE</div>
+                        <h1>Welcome back, <span id="welcomeName">Admin</span>! <span class="wave">✦</span></h1>
+                        <p class="page-description">Here's what's happening with your blog today.</p>
+                    </div>
+
+                    <div class="welcome-actions">
+                        <button class="btn btn-secondary" id="exportBtn">
+                            <i class="fa-solid fa-download"></i> Export
+                        </button>
+                        <button class="btn btn-primary" id="addPostBtn">
+                            <i class="fa-solid fa-plus"></i> Create new post
+                        </button>
+                    </div>
+                </div>
+
+                <div class="date-banner">
+                    <div class="date-icon"><i class="fa-regular fa-calendar"></i></div>
+                    <div>
+                        <strong id="todayDate">Today</strong>
+                        <span>Your content performance overview</span>
+                    </div>
+                    <span class="live-label"><span></span> Dashboard active</span>
+                </div>
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Overview</h2>
+                        <p>Track your blog's key performance metrics.</p>
+                    </div>
+                    <select class="select-control" id="overviewPeriod" aria-label="Overview period">
+                        <option value="7">Last 7 days</option>
+                        <option value="30" selected>Last 30 days</option>
+                        <option value="90">Last 90 days</option>
+                    </select>
+                </div>
+
+                <div class="stats-grid">
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <span>Total posts</span>
+                            <span class="stat-icon purple"><i class="fa-regular fa-file-lines"></i></span>
+                        </div>
+                        <div class="stat-value" id="totalPosts">0</div>
+                        <div class="stat-bottom"><span class="stat-note">All your articles</span></div>
+                        <div class="mini-bars purple-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <span>Published</span>
+                            <span class="stat-icon green"><i class="fa-solid fa-check"></i></span>
+                        </div>
+                        <div class="stat-value" id="publishedPosts">0</div>
+                        <div class="stat-bottom"><span class="stat-note">Live articles</span></div>
+                        <div class="mini-bars green-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <span>Drafts</span>
+                            <span class="stat-icon orange"><i class="fa-regular fa-pen-to-square"></i></span>
+                        </div>
+                        <div class="stat-value" id="draftPosts">0</div>
+                        <div class="stat-bottom"><span class="stat-note">Work in progress</span></div>
+                        <div class="mini-bars orange-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <span>Total views</span>
+                            <span class="stat-icon blue"><i class="fa-regular fa-eye"></i></span>
+                        </div>
+                        <div class="stat-value" id="totalViews">0</div>
+                        <div class="stat-bottom"><span class="stat-note">Sample analytics</span></div>
+                        <div class="mini-bars blue-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                    </article>
+                </div>
+
+                <div class="analytics-grid">
+                    <article class="panel traffic-panel">
+                        <div class="panel-header">
+                            <div>
+                                <h3>Blog traffic</h3>
+                                <p>Views and visitors over time</p>
+                            </div>
+                            <button class="icon-button subtle-button" data-page="analytics" aria-label="View analytics">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </button>
+                        </div>
+
+                        <div class="chart-summary">
+                            <div><strong id="trafficTotal">12,480</strong><span>Total views · sample data</span></div>
+                            <div class="chart-legend">
+                                <span><i class="legend-dot views-dot"></i> Views</span>
+                                <span><i class="legend-dot visitors-dot"></i> Visitors</span>
+                            </div>
+                        </div>
+
+                        <div class="chart-wrap">
+                            <canvas id="trafficChart"></canvas>
+                        </div>
+                    </article>
+
+                    <article class="panel category-panel">
+                        <div class="panel-header">
+                            <div>
+                                <h3>Post categories</h3>
+                                <p>Published content distribution</p>
+                            </div>
+                            <button class="icon-button subtle-button" data-page="categories" aria-label="View categories">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </button>
+                        </div>
+
+                        <div class="doughnut-wrap">
+                            <canvas id="categoryChart"></canvas>
+                            <div class="doughnut-center">
+                                <strong id="categoryTotal">0</strong>
+                                <span>Categories</span>
+                            </div>
+                        </div>
+                        <div class="category-legend" id="categoryLegend"></div>
+                    </article>
+                </div>
+
+                <article class="panel posts-panel">
+                    <div class="panel-header table-panel-header">
+                        <div>
+                            <h3>Recent posts</h3>
+                            <p>Manage and track your latest articles.</p>
+                        </div>
+                        <button class="btn btn-secondary btn-small" data-page="posts">View all posts <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ARTICLE</th>
+                                    <th>CATEGORY</th>
+                                    <th>STATUS</th>
+                                    <th>VIEWS</th>
+                                    <th>DATE</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="recentPostsBody"></tbody>
+                        </table>
+                    </div>
+                    <div class="empty-state hidden" id="recentEmpty">No posts yet. Create your first article!</div>
+                </article>
+
+                <footer class="footer">
+                    <span>© <span class="currentYear"></span> SLBlog Admin</span>
+                    <span>Designed for creators <i class="fa-solid fa-heart"></i></span>
+                </footer>
+            </section>
+
+            <!-- ALL POSTS -->
+            <section class="page-section" id="page-posts">
+                <div class="page-title-row">
+                    <div>
+                        <div class="eyebrow">CONTENT MANAGEMENT</div>
+                        <h1>All Posts</h1>
+                        <p class="page-description">Create, organize, and manage your articles.</p>
+                    </div>
+                    <button class="btn btn-primary" id="postsAddBtn"><i class="fa-solid fa-plus"></i> New post</button>
+                </div>
+
+                <div class="stats-grid compact-stats">
+                    <article class="stat-card compact-stat"><span>Total posts</span><strong id="postsStatTotal">0</strong></article>
+                    <article class="stat-card compact-stat"><span>Published</span><strong id="postsStatPublished">0</strong></article>
+                    <article class="stat-card compact-stat"><span>Drafts</span><strong id="postsStatDraft">0</strong></article>
+                </div>
+
+                <article class="panel posts-panel">
+                    <div class="table-toolbar">
+                        <div class="tabs" id="postTabs">
+                            <button class="tab active" data-filter="all">All posts</button>
+                            <button class="tab" data-filter="Published">Published</button>
+                            <button class="tab" data-filter="Draft">Drafts</button>
+                        </div>
+                        <div class="toolbar-right">
+                            <div class="search-box table-search">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input id="postSearch" type="search" placeholder="Search posts...">
+                            </div>
+                            <select class="select-control" id="categoryFilter" aria-label="Filter category">
+                                <option value="all">All categories</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ARTICLE</th>
+                                    <th>CATEGORY</th>
+                                    <th>STATUS</th>
+                                    <th>VIEWS</th>
+                                    <th>DATE</th>
+                                    <th>ACTIONS</th>
+                                </tr>
+                            </thead>
+                            <tbody id="allPostsBody"></tbody>
+                        </table>
+                    </div>
+                    <div class="empty-state hidden" id="postsEmpty">
+                        <i class="fa-regular fa-file-lines"></i>
+                        <strong>No posts found</strong>
+                        <p>Create a new post or change your search filters.</p>
+                    </div>
+                    <div class="table-footer"><span id="postCountText">0 posts</span><span>Stored in this browser</span></div>
+                </article>
+
+                <footer class="footer"><span>© <span class="currentYear"></span> SLBlog Admin</span><span>Content workspace</span></footer>
+            </section>
+
+            <section class="page-section" id="page-analytics">
+                <div class="page-title-row">
+                    <div>
+                        <div class="eyebrow">PERFORMANCE INSIGHTS</div>
+                        <h1>Analytics</h1>
+                        <p class="page-description">Understand your content performance and audience.</p>
+                    </div>
+                    <select class="select-control" id="analyticsPeriod" aria-label="Analytics period">
+                        <option value="7">Last 7 days</option>
+                        <option value="30" selected>Last 30 days</option>
+                        <option value="90">Last 90 days</option>
+                    </select>
+                </div>
+
+                <div class="stats-grid">
+                    <article class="stat-card"><div class="stat-top"><span>Total views</span><span class="stat-icon blue"><i class="fa-regular fa-eye"></i></span></div><div class="stat-value">12,480</div><div class="stat-bottom"><span class="trend-up">↗ 12.8%</span><span class="stat-note">sample data</span></div></article>
+                    <article class="stat-card"><div class="stat-top"><span>Unique visitors</span><span class="stat-icon purple"><i class="fa-solid fa-users"></i></span></div><div class="stat-value">8,642</div><div class="stat-bottom"><span class="trend-up">↗ 8.2%</span><span class="stat-note">sample data</span></div></article>
+                    <article class="stat-card"><div class="stat-top"><span>Avg. read time</span><span class="stat-icon green"><i class="fa-regular fa-clock"></i></span></div><div class="stat-value">4m 32s</div><div class="stat-bottom"><span class="stat-note">Illustrative metric</span></div></article>
+                    <article class="stat-card"><div class="stat-top"><span>Engagement</span><span class="stat-icon orange"><i class="fa-solid fa-bolt"></i></span></div><div class="stat-value">68.4%</div><div class="stat-bottom"><span class="stat-note">Illustrative metric</span></div></article>
+                </div>
+
+                <article class="panel analytics-large-panel">
+                    <div class="panel-header"><div><h3>Traffic performance</h3><p>Illustrative views and visitor data</p></div><span class="sample-badge"> DATA</span></div>
+                    <div class="chart-wrap large-chart"><canvas id="analyticsTrafficChart"></canvas></div>
+                </article>
+
+                <div class="analytics-grid">
+                    <article class="panel">
+                        <div class="panel-header"><div><h3>Views by category</h3><p>Sample distribution</p></div></div>
+                        <div class="chart-wrap medium-chart"><canvas id="analyticsCategoryChart"></canvas></div>
+                    </article>
+                    <article class="panel">
+                        <div class="panel-header"><div><h3>Top articles</h3><p>Illustrative view counts</p></div></div>
+                        <div class="popular-list" id="popularPosts"></div>
+                    </article>
+                </div>
+
+                <div class="notice"><i class="fa-solid fa-circle-info"></i> Analytics figures are sample values for the UI. Real traffic tracking requires an analytics service or backend.</div>
+                <footer class="footer"><span>© <span class="currentYear"></span> SLBlog Admin</span><span>Analytics workspace</span></footer>
+            </section>
+
+            <!-- CATEGORIES -->
+            <section class="page-section" id="page-categories">
+                <div class="page-title-row">
+                    <div><div class="eyebrow">CONTENT ORGANIZATION</div><h1>Categories</h1><p class="page-description">Organize articles into meaningful topics.</p></div>
+                    <button class="btn btn-primary" id="addCategoryBtn"><i class="fa-solid fa-plus"></i> Add category</button>
+                </div>
+                <div class="category-cards" id="categoryCards"></div>
+                <article class="panel">
+                    <div class="panel-header"><div><h3>Category overview</h3><p>Manage your blog topics.</p></div></div>
+                    <div class="table-responsive">
+                        <table><thead><tr><th>CATEGORY</th><th>DESCRIPTION</th><th>POSTS</th><th>ACTIONS</th></tr></thead><tbody id="categoriesBody"></tbody></table>
+                    </div>
+                    <div class="empty-state hidden" id="categoriesEmpty">No categories yet. Add your first category.</div>
+                </article>
+                <footer class="footer"><span>© <span class="currentYear"></span> SLBlog Admin</span><span>Category workspace</span></footer>
+            </section>
+
+            <!-- COMMENTS -->
+            <section class="page-section" id="page-comments">
+                <div class="page-title-row">
+                    <div><div class="eyebrow">COMMUNITY MANAGEMENT</div><h1>Comments</h1><p class="page-description">Review and moderate reader conversations.</p></div>
+                </div>
+                <div class="stats-grid compact-stats">
+                    <article class="stat-card compact-stat"><span>Total comments</span><strong id="commentTotal">0</strong></article>
+                    <article class="stat-card compact-stat"><span>Pending review</span><strong id="commentPending">0</strong></article>
+                    <article class="stat-card compact-stat"><span>Approved</span><strong id="commentApproved">0</strong></article>
+                </div>
+                <article class="panel">
+                    <div class="table-toolbar">
+                        <div class="tabs" id="commentTabs">
+                            <button class="tab active" data-filter="all">All</button>
+                            <button class="tab" data-filter="Pending">Pending</button>
+                            <button class="tab" data-filter="Approved">Approved</button>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table><thead><tr><th>AUTHOR</th><th>COMMENT</th><th>ARTICLE</th><th>STATUS</th><th>ACTIONS</th></tr></thead><tbody id="commentsBody"></tbody></table>
+                    </div>
+                    <div class="empty-state hidden" id="commentsEmpty">No comments match this filter.</div>
+                </article>
+                <div class="notice"><i class="fa-solid fa-circle-info"></i> These are demonstration comments. Moderation changes are stored locally in your browser.</div>
+                <footer class="footer"><span>© <span class="currentYear"></span> SLBlog Admin</span><span>Community workspace</span></footer>
+            </section>
+
+            <section class="page-section" id="page-settings">
+                <div class="page-title-row"><div><div class="eyebrow">PERSONALIZATION</div><h1>Settings</h1><p class="page-description">Customize your dashboard preferences.</p></div></div>
+                <div class="settings-layout">
+                    <article class="panel settings-panel">
+                        <div class="panel-header"><div><h3>Profile settings</h3><p>Update your administrator details.</p></div></div>
+                        <form id="profileForm" class="settings-form">
+                            <label for="adminName">Display name</label>
+                            <input id="adminName" type="text" maxlength="50" required placeholder="Enter your name">
+                            <label for="adminEmail">Email address</label>
+                            <input id="adminEmail" type="email" required placeholder="admin@example.com">
+                            <label for="blogName">Blog name</label>
+                            <input id="blogName" type="text" maxlength="70" required placeholder="SLBlog">
+                            <button class="btn btn-primary" type="submit">Save changes</button>
+                        </form>
+                    </article>
+                    <article class="panel settings-panel">
+                        <div class="panel-header"><div><h3>Dashboard preferences</h3><p>Manage how the dashboard behaves.</p></div></div>
+                        <div class="setting-row"><div><strong>Compact sidebar</strong><p>Use a narrower navigation menu.</p></div><label class="switch"><input type="checkbox" id="compactSidebar"><span></span></label></div>
+                        <div class="setting-row"><div><strong>Browser notifications</strong><p>Allow  notification messages.</p></div><label class="switch"><input type="checkbox" id="notificationsEnabled" checked><span></span></label></div>
+                        <div class="setting-row"><div><strong>Reset sample data</strong><p>Restore the original demonstration posts and categories.</p></div><button class="btn btn-danger-outline btn-small" id="resetDataBtn">Reset data</button></div>
+                    </article>
+                </div>
+                <footer class="footer"><span>© <span class="currentYear"></span> SLBlog Admin</span><span>Settings workspace</span></footer>
+            </section>
+
+        </div>
+    </main>
+</div>
+
+<!-- POST MODAL -->
+<div class="modal-backdrop" id="postModal" role="dialog" aria-modal="true" aria-labelledby="postModalTitle">
+    <div class="modal">
+        <div class="modal-header">
+            <div><h2 id="postModalTitle">Create a new post</h2><p>Add an article to your content library.</p></div>
+            <button class="icon-button modal-close" data-close="postModal" aria-label="Close dialog"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <form id="postForm">
+            <input type="hidden" id="postId">
+            <label for="postTitle">Article title <span>*</span></label>
+            <input type="text" id="postTitle" maxlength="120" required placeholder="Enter an engaging title">
+            <label for="postSubtitle">Short description</label>
+            <textarea id="postSubtitle" maxlength="220" rows="3" placeholder="What is this article about?"></textarea>
+            <div class="form-row">
+                <div><label for="postCategory">Category</label><select id="postCategory" required></select></div>
+                <div><label for="postStatus">Status</label><select id="postStatus"><option>Draft</option><option>Published</option></select></div>
+            </div>
+            <label for="postImage">Cover image URL (optional)</label>
+            <input type="url" id="postImage" placeholder="https://example.com/image.jpg">
+            <label for="postContent">Article content</label>
+            <textarea id="postContent" rows="5" placeholder="Write your article content..."></textarea>
+            <div class="modal-actions">
+                <button type="button" class="btn btn-secondary" data-close="postModal">Cancel</button>
+                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-check"></i> Save post</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- CATEGORY MODAL -->
+<div class="modal-backdrop" id="categoryModal" role="dialog" aria-modal="true" aria-labelledby="categoryModalTitle">
+    <div class="modal modal-small">
+        <div class="modal-header">
+            <div><h2 id="categoryModalTitle">Add category</h2><p>Give your category a name and description.</p></div>
+            <button class="icon-button modal-close" data-close="categoryModal" aria-label="Close dialog"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <form id="categoryForm">
+            <input type="hidden" id="categoryOriginalName">
+            <label for="categoryName">Category name <span>*</span></label>
+            <input type="text" id="categoryName" maxlength="35" required placeholder="e.g. Technology">
+            <label for="categoryDescription">Description</label>
+            <textarea id="categoryDescription" rows="3" maxlength="140" placeholder="Describe this topic..."></textarea>
+            <div class="modal-actions">
+                <button type="button" class="btn btn-secondary" data-close="categoryModal">Cancel</button>
+                <button type="submit" class="btn btn-primary">Save category</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

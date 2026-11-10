@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SLTask| Task Management</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="dashboard">
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="topbar">
+                <div>
+                    <p class="breadcrumb">SL / TASK MANAGER</p>
+                    <h2>My Dashboard</h2>
+                </div>
+                <div class="date-display">
+                    <span class="date-icon">▣</span>
+                    <span id="currentDate"></span>
+                </div>
+            </header>
+
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <div>
+                    <span class="welcome-tag">Win the morning, win the day</span>
+                    <h1>Make today <span>count.</span></h1>
+                    <p>Organize your thoughts, manage your tasks and get things done.</p>
+                </div>
+
+                <div class="welcome-decoration">
+                    <span>✦</span>
+                </div>
+            </section>
+
+            <!-- Statistics -->
+            <section class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Total Tasks</span>
+                        <div class="stat-icon total-icon">▦</div>
+                    </div>
+                    <h2 id="totalTasks">0</h2>
+                    <p>All your tasks</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Pending</span>
+                        <div class="stat-icon pending-icon">◷</div>
+                    </div>
+                    <h2 id="pendingTasks">0</h2>
+                    <p>Still in progress</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Completed</span>
+                        <div class="stat-icon completed-icon">✓</div>
+                    </div>
+                    <h2 id="completedTasks">0</h2>
+                    <p>Successfully finished</p>
+                </div>
+
+            </section>
+
+
+            <!-- Task Section -->
+            <section class="task-section">
+
+                <div class="section-heading">
+                    <div>
+                        <span class="section-tag">GET THINGS DONE</span>
+                        <h2>Your Tasks</h2>
+                    </div>
+                </div>
+
+
+                <!-- Add Task Form -->
+                <form class="task-form" id="taskForm">
+
+                    <div class="input-wrapper">
+                        <span class="input-icon">✎</span>
+                        <input
+                            type="text"
+                            id="taskInput"
+                            placeholder="What needs to be done today?"
+                            autocomplete="off"
+                        >
+                    </div>
+
+                    <button type="submit" id="addBtn">
+                        <span>+</span> Add Task
+                    </button>
+                </form>
+
+                <!-- Task List -->
+                <div class="list-heading">
+                    <h3 id="listTitle">All Tasks</h3>
+                    <span>Manage your daily activities</span>
+                </div>
+
+                <ul id="taskList"></ul>
+                <div id="emptyMessage" class="empty-state">
+                    <div class="empty-icon">✦</div>
+                    <h3>No tasks yet</h3>
+                    <p>Add your first task and start being productive.</p>
+                </div>
+            </section>
+
+            <footer class="main-footer">
+                <span>Made for better productivity.</span>
+                <span>SLTask <span class="brand-dot">♥</span></span>
+            </footer>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Check current weather and a five-day forecast for any city using free weather data.">
+    <title>Atmosphere | Weather App</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="weather-app">
+        <header class="app-header">
+            <a href="#" class="brand" aria-label="Atmosphere home">
+                <span class="brand-icon">☀</span>
+                <span>atmosphere</span>
+            </a>
+
+            <p class="header-tagline">Your world, in weather.</p>
+        </header>
+        <section class="search-section" aria-label="Search for a city">
+            <form id="search-form" class="search-form">
+                <span class="search-icon" aria-hidden="true">⌕</span>
+
+                <label for="city-input" class="sr-only">
+                    Enter city name
+                </label>
+                <input
+                    type="text"
+                    id="city-input"
+                    name="city"
+                    placeholder="Search for a city..."
+                    autocomplete="off"
+                    required>
+                <button type="submit" id="search-button">Search</button>
+            </form>
+            <p class="search-hint">
+                Discover the weather anywhere in the world
+            </p>
+        </section>
+        <div
+            id="status-message"
+            class="status-message"
+            role="status"
+            aria-live="polite"
+            hidden
+        ></div>
+        <section id="current-weather" class="current-weather glass-card" aria-label="Current weather" hidden>
+            <div class="weather-location">
+                <div>
+                    <p class="section-label">CURRENT WEATHER</p>
+                    <h1 id="city-name">City Name</h1>
+                    <p id="current-date" class="current-date">Today's date</p>
+                </div>
+                <span id="location-icon" class="location-icon" aria-hidden="true">⌖</span>
+            </div>
+            <div class="weather-main">
+                <div class="temperature-block">
+                    <p id="temperature" class="temperature">--°</p>
+                    <p id="weather-condition" class="weather-condition">
+                        Weather condition
+                    </p>
+                    <p id="feels-like" class="feels-like">Feels like --°c</p>
+                </div>
+
+                <div class="weather-visual">
+                    <span
+                        id="weather-icon"
+                        class="weather-icon"
+                        role="img"
+                        aria-label="Weather icon"
+                    >🌤️</span>
+                </div>
+            </div>
+            <div class="weather-details">
+
+                <article class="detail-card">
+                    <div class="detail-icon humidity-icon" aria-hidden="true">
+                        💧
+                    </div>
+                    <div>
+                        <p class="detail-label">Humidity</p>
+                        <p id="humidity" class="detail-value">--%</p>
+                    </div>
+                </article>
+
+                <article class="detail-card">
+                    <div class="detail-icon wind-icon" aria-hidden="true">
+                        ≋
+                    </div>
+                    <div>
+                        <p class="detail-label">Wind Speed</p>
+                        <p id="wind-speed" class="detail-value">-- km/h</p>
+                    </div>
+                </article>
+
+                <article class="detail-card">
+                    <div class="detail-icon feels-icon" aria-hidden="true">
+                        🌡️
+                    </div>
+                    <div>
+                        <p class="detail-label">Feels Like</p>
+                        <p id="feels-detail" class="detail-value">--°C</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="forecast-section" class="forecast-section" aria-label="Five-day weather forecast" hidden>
+            <div class="section-heading">
+                <div>
+                    <p class="section-label">PLAN AHEAD</p>
+                    <h2>5-Day Forecast</h2>
+                </div>
+                <span class="forecast-badge">5 DAYS</span>
+            </div>
+            <div id="forecast-container" class="forecast-container">
+            </div>
+        </section>
+        <section id="welcome-section" class="welcome-section glass-card">
+            <div class="welcome-icon" aria-hidden="true">🌍</div>
+            <h2>Explore the weather</h2>
+            <p>
+                Enter a city above to discover its current temperature,
+                humidity, wind speed, and upcoming forecast.
+            </p>
+        </section>
+        <footer class="app-footer">
+            <p>
+                Weather data by
+                <a
+                    href="https://open-meteo.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >Open-Meteo</a>
+            </p>
+            <p>Made with curiosity &amp; ☀️</p>
+        </footer>
+    </main>
+    <script src="script.js" defer></script>
+</body>
+</html>

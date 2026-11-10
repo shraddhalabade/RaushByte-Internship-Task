@@ -1,0 +1,147 @@
+
+const products = [
+    {
+        id: 1,
+        name: "Classic Everyday Sneakers",
+        category: "Footwear",
+        categoryKey: "footwear",
+        price: 1499,
+        oldPrice: 1999,
+        rating: 4.8,
+        badge: "BESTSELLER",
+        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80",
+        description: "Comfortable everyday sneakers designed for casual outings and daily adventures."
+    },
+    {
+        id: 2,
+        name: "Minimalist Wrist Watch",
+        category: "Accessories",
+        categoryKey: "accessories",
+        price: 2199,
+        oldPrice: 2799,
+        rating: 4.7,
+        badge: "POPULAR",
+        image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80",
+        description: "A timeless minimalist watch that complements both casual and formal outfits."
+    },
+    {
+        id: 3,
+        name: "Premium Everyday Bag",
+        category: "Fashion",
+        categoryKey: "fashion",
+        price: 1799,
+        oldPrice: 2299,
+        rating: 4.6,
+        badge: "NEW",
+        image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80",
+        description: "A versatile everyday bag with a stylish silhouette and practical storage."
+    },
+    {
+        id: 4,
+        name: "Modern Sunglasses",
+        category: "Accessories",
+        categoryKey: "accessories",
+        price: 899,
+        oldPrice: 1199,
+        rating: 4.5,
+        badge: "TRENDING",
+        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80",
+        description: "Contemporary sunglasses that add a polished finishing touch to your look."
+    },
+    {
+        id: 5,
+        name: "Casual Cotton T-Shirt",
+        category: "Fashion",
+        categoryKey: "fashion",
+        price: 699,
+        oldPrice: 899,
+        rating: 4.6,
+        badge: "POPULAR",
+        image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80",
+        description: "A versatile cotton T-shirt made for comfortable everyday wear."
+    },
+    {
+        id: 6,
+        name: "Classic White Sneakers",
+        category: "Footwear",
+        categoryKey: "footwear",
+        price: 1899,
+        oldPrice: 2499,
+        rating: 4.9,
+        badge: "TOP RATED",
+        image: "https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=800&q=80",
+        description: "Clean, versatile sneakers that pair effortlessly with everyday outfits."
+    },
+    {
+        id: 7,
+        name: "Everyday Travel Backpack",
+        category: "Lifestyle",
+        categoryKey: "lifestyle",
+        price: 1599,
+        oldPrice: 1999,
+        rating: 4.7,
+        badge: "NEW",
+        image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80",
+        description: "A practical backpack for commuting, travel, and everyday essentials."
+    },
+    {
+        id: 8,
+        name: "Essential Water Bottle",
+        category: "Lifestyle",
+        categoryKey: "lifestyle",
+        price: 499,
+        oldPrice: 699,
+        rating: 4.4,
+        badge: "VALUE PICK",
+        image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=800&q=80",
+        description: "A reusable bottle for keeping hydration close at home or on the go."
+    },
+    {
+        id: 9,
+        name: "Everyday Crossbody Bag",
+        category: "Fashion",
+        categoryKey: "fashion",
+        price: 1299,
+        oldPrice: 1699,
+        rating: 4.5,
+        badge: "NEW",
+        image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80",
+        description: "A compact crossbody bag for carrying your essentials in style."
+    },
+    {
+        id: 10,
+        name: "Retro Running Shoes",
+        category: "Footwear",
+        categoryKey: "footwear",
+        price: 1999,
+        oldPrice: 2599,
+        rating: 4.8,
+        badge: "POPULAR",
+        image: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=800&q=80",
+        description: "Sport-inspired shoes with a comfortable everyday fit."
+    },
+    {
+        id: 11,
+        name: "Everyday Sunglasses",
+        category: "Accessories",
+        categoryKey: "accessories",
+        price: 999,
+        oldPrice: 1399,
+        rating: 4.4,
+        badge: "TRENDING",
+        image: "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?auto=format&fit=crop&w=800&q=80",
+        description: "Versatile sunglasses for sunny days and weekend outings."
+    },
+    {
+        id: 12,
+        name: "Travel Organizer Backpack",
+        category: "Lifestyle",
+        categoryKey: "lifestyle",
+        price: 1799,
+        oldPrice: 2299,
+        rating: 4.7,
+        badge: "BESTSELLER",
+        image: "https://images.unsplash.com/photo-1622560480654-d96214fdc887?auto=format&fit=crop&w=800&q=80",
+        description: "A roomy organizer backpack for work, study, and travel."
+    }
+];
